@@ -1,0 +1,87 @@
+#1.Install Updates
+sudo apt-get update
+
+#2.install Nginx package
+
+sudo apt-get install nginx
+
+#3.create folder root for your website
+sudo mkdir -p /var/www/html/venketraman.com/public_html
+
+#4.assign folder rights to the user
+sudo chown -R $USER:$USER /var/www/html/venketraman.com/public_html
+
+#5.provide proper rights to the website path
+sudo chmod -R 755 /var/www/html/
+
+#6.edit your index.html file  OR put your static website files here
+sudo vi /var/www/html/venketraman.com/public_html/index.html
+
+#7.copy the defalut nginx conf file as your sitename.conf in the below location
+
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/venketraman.com.conf
+
+#8.edit the configuration file
+sudo vi /etc/nginx/sites-available/venketraman.com.conf
+	8.a//in server line change look like this
+	
+	server {
+	listen 80;
+	listen [::]:80;
+	
+	8.b// in website folder location change like this
+	
+	root /var/www/html/venketraman.com/public_html;
+	
+	8.c// if you have php website file enter like this
+	
+	# Add index.php to the list if you are using PHP
+	
+	index index.html index.htm index.nginx-debian.html index.php;
+	
+	8.d // In Server name change like below
+	
+	server_name venketraman.com www.venketraman.com;
+	
+	
+	
+#9.(optional)Delete the default conf file
+sudo rm /etc/nginx/sites-enabled/default
+
+#10.make the symbolic link your conf file to sites enabled folder
+sudo ln -s /etc/nginx/sites-available/venketraman.com.conf /etc/nginx/sites-enabled/
+
+#11.restart Nginx service
+service nginx restart
+
+repeats Steps 3 to 11 for each website you want to create 
+ Site 2 Follows
+	sudo mkdir -p /var/www/html/accudra.com/public_html
+
+	sudo chown -R $USER:$USER /var/www/html/accudra.com/public_html
+
+	sudo vi /var/www/html/accudra.com/public_html/index.html
+
+	sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/accudra.com.conf
+
+	sudo vi /etc/nginx/sites-available/accudra.com.conf
+
+	sudo ln -s /etc/nginx/sites-available/accudra.com.conf /etc/nginx/sites-enabled/
+
+
+Site 3 Follows
+	
+
+	sudo mkdir -p /var/www/html/we2.venketraman.com/public_html
+
+	sudo chown -R $USER:$USER /var/www/html/we2.venketraman.com/public_html
+
+	sudo vi /var/www/html/we2.venketraman.com/public_html/index.html
+
+	sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/we2.venketraman.com.conf
+
+	sudo vi  /etc/nginx/sites-available/we2.venketraman.com.conf
+	
+	sudo ln -s /etc/nginx/sites-available/we2.venketraman.com.conf /etc/nginx/sites-enabled/
+
+
