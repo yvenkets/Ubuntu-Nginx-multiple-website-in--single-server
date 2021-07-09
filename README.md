@@ -25,9 +25,11 @@ sudo systemctl disable nginx
 
 
 #3.create folder root for your website
+
 sudo mkdir -p /var/www/html/venketraman.com/
 
 #4.assign folder rights to the user
+
 sudo chown -R $USER:$USER /var/www/html/venketraman.com/
 
 #5.provide proper rights to the website path
