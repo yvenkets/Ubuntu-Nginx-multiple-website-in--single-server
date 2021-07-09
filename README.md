@@ -1,6 +1,7 @@
 # multiple-website-in-nginx-server
 
 #1.Install Updates
+
 sudo apt-get update
 
 #2.install Nginx package
@@ -8,18 +9,23 @@ sudo apt-get update
 sudo apt-get install nginx
 
 #to restart nginx
-service nginx restart
+
+sudo service nginx restart
 
 #find which apps for configure firewall
+
 sudo ufw app list
 
 #configure nginx in firewall
+
 sudo ufw allow 'Nginx HTTP'
 
 #to know the nginx service status
-systemctl status nginx
+
+sudo systemctl status nginx
 
 #to enable or disable nginx service status at system startup
+
 sudo systemctl enable nginx
 sudo systemctl disable nginx
 
@@ -33,9 +39,11 @@ sudo mkdir -p /var/www/html/venketraman.com/
 sudo chown -R $USER:$USER /var/www/html/venketraman.com/
 
 #5.provide proper rights to the website path
+
 sudo chmod -R 755 /var/www/html/
 
 #6.edit your index.html file  OR put your static website files here
+
 sudo vi /var/www/html/venketraman.com/index.html
 
 #7.copy the defalut nginx conf file as your sitename.conf in the below location
@@ -43,6 +51,7 @@ sudo vi /var/www/html/venketraman.com/index.html
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/venketraman.com.conf
 
 #8.edit the configuration file
+
 sudo vi /etc/nginx/sites-available/venketraman.com.conf
 	8.a//in server line change look like this
 	
@@ -78,7 +87,7 @@ sudo ln -s /etc/nginx/sites-available/venketraman.com.conf /etc/nginx/sites-enab
 
 #11.restart Nginx service
 
-service nginx restart
+sudo service nginx restart
 
 repeats Steps 3 to 11 for each website you want to create 
  Site 2 Follows
