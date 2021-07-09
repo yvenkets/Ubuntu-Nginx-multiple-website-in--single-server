@@ -6,10 +6,20 @@ sudo apt-get update
 #2.install Nginx package
 
 sudo apt-get install nginx
+
+#to restart nginx
 service nginx restart
+
+#find which apps for configure firewall
 sudo ufw app list
+
+#configure nginx in firewall
 sudo ufw allow 'Nginx HTTP'
+
+#to know the nginx service status
 systemctl status nginx
+
+#to enable or disable nginx service status at system startup
 sudo systemctl enable nginx
 sudo systemctl disable nginx
 
