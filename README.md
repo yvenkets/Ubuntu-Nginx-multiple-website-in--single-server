@@ -67,12 +67,15 @@ sudo vi /etc/nginx/sites-available/venketraman.com.conf
 	
 	
 #9.(optional)Delete the default conf file
+
 sudo rm /etc/nginx/sites-enabled/default
 
 #10.make the symbolic link your conf file to sites enabled folder
+
 sudo ln -s /etc/nginx/sites-available/venketraman.com.conf /etc/nginx/sites-enabled/
 
 #11.restart Nginx service
+
 service nginx restart
 
 repeats Steps 3 to 11 for each website you want to create 
