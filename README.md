@@ -53,26 +53,26 @@ sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/venketrama
 #8.edit the configuration file
 
 sudo vi /etc/nginx/sites-available/venketraman.com.conf
-	8.a//in server line change look like this
+	#in server line change look like this
 	
 	server {
 	listen 80;
 	listen [::]:80;
 	
-	8.b// in website folder location change like this
+	# in website folder location change like this
 	
 	root /var/www/html/venketraman.com/public_html;
 	
-	8.c// if you have php website file enter like this
+	// if you have php website file enter like this
 	
 	# Add index.php to the list if you are using PHP
 	
 	index index.html index.htm index.nginx-debian.html index.php;
 	
-	8.d // In Server name change like below
+	# In Server name change like below
 	
 	server_name venketraman.com www.venketraman.com;
-	8.e //close server block
+	# close server block
              }
 	
 	
