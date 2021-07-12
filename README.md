@@ -72,9 +72,8 @@ sudo vi /etc/nginx/sites-available/venketraman.com.conf
 	8.d // In Server name change like below
 	
 	server_name venketraman.com www.venketraman.com;
-	
-  8.e //close server block
-  }
+	8.e //close server block
+             }
 	
 	
 #9.(optional)Delete the default conf file
